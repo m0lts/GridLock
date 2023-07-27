@@ -60,6 +60,7 @@ h2 {
 
 /* Header */
 header {
+  border: 1px solid black;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -68,10 +69,11 @@ header {
   padding:0 25px;
 }
 .headerLeftFlex {
+  border: 1px solid rgb(239, 28, 28);
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width:50%;
+  width:fit-content;
   gap:50px;
 }
 .logoImg {
@@ -106,9 +108,46 @@ header {
   height: 1px;
   background: var(--red);
 }
+.navItem.narrowScreen {
+  display:none;
+}
 .headerRightFlex {
+  border: 1px solid rgb(16, 215, 39);
   display: flex;
   justify-content: space-between;
   align-items: center;
   width:150px;
+}
+/* Header - below 768px */
+@media screen and (max-width:767px) {
+  header {
+    position: fixed;
+    bottom:0px;
+    background-color: var(--light-grey);
+    padding:0px;
+  }
+  .headerLeftFlex {
+    width:100%;
+  }
+  .logoImg {
+    display:none;
+  }
+  .navList {
+    width:100%;
+    justify-content: space-around;
+  }
+  .navItem {
+    border:1px solid blue;
+    padding:10px;
+  }
+  .navItem.narrowScreen {
+    display:block;
+  }
+  .navItem.onPage::before {
+    width:0;
+    height:0;
+  }
+  .headerRightFlex {
+    display:none;
+  }
 }

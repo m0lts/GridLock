@@ -10,9 +10,18 @@ export default function Header() {
             <div className="headerLeftFlex">
                 <img src={logo} alt="GridLock Logo" className="logoImg" />
                 <ul className="navList">
-                    <li className="navItem onPage">Next Race</li>
-                    <li className="navItem">Standings</li>
-                    <li className="navItem">Calendar</li>
+                    <li className="navItem onPage">
+                        Next Race
+                    </li>
+                    <li className="navItem">
+                        Standings
+                    </li>
+                    <li className="navItem">
+                        Calendar
+                    </li>
+                    <li className="navItem narrowScreen">
+                        Login
+                    </li>
                 </ul>
             </div>
             <div className="headerRightFlex">
