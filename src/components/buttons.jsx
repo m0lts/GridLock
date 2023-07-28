@@ -1,12 +1,14 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRightToBracket, faUser } from "@fortawesome/free-solid-svg-icons";
 import "../assets/global.css";
 
 // Check if user is logged in - if truthy, return solid icon, else return empty one.
 function Icon({isLoggedIn}) {
     if (isLoggedIn) {
-        return <span><i class="fa-solid fa-user"></i> Account</span>;
+        return <span><FontAwesomeIcon icon={faUser} /> Account</span>;
     }
-    return <span><i class="fa-regular fa-user"></i> Log In</span>;
+    return <span><FontAwesomeIcon icon={faUser} /> Log In</span>;
 }
 
 
@@ -14,7 +16,8 @@ function Icon({isLoggedIn}) {
 export function SignUpBtn() {
     return (
         <button className="btn signUpBtn">
-            <i class="fa-solid fa-arrow-right-to-bracket"></i> Sign Up
+            <FontAwesomeIcon icon={faArrowRightToBracket} /> 
+            Sign Up
         </button>
     )
 }

@@ -60,7 +60,6 @@ h2 {
 
 /* Header */
 header {
-  border: 1px solid black;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -69,7 +68,6 @@ header {
   padding:0 25px;
 }
 .headerLeftFlex {
-  border: 1px solid rgb(239, 28, 28);
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -111,8 +109,10 @@ header {
 .navItem.narrowScreen {
   display:none;
 }
+.iconNarrowWindow {
+  display:none;
+}
 .headerRightFlex {
-  border: 1px solid rgb(16, 215, 39);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -122,8 +122,10 @@ header {
 @media screen and (max-width:767px) {
   header {
     position: fixed;
+    border:2px solid var(--red);
     bottom:0px;
-    background-color: var(--light-grey);
+    background-color: var(--white);
+    color: var(--black);
     padding:0px;
   }
   .headerLeftFlex {
@@ -137,17 +139,37 @@ header {
     justify-content: space-around;
   }
   .navItem {
-    border:1px solid blue;
-    padding:10px;
+    width:25%;
+    padding:15px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
   }
-  .navItem.narrowScreen {
-    display:block;
+  .navItem:hover {
+    background-color: var(--light-grey);
+  }
+  .navItem.onPage {
+    background-color: var(--black);
+    color: var(--white);
   }
   .navItem.onPage::before {
     width:0;
     height:0;
   }
+  .navItem.narrowScreen {
+    display:flex;
+  }
+  .iconNarrowWindow {
+    display:block;
+  }
   .headerRightFlex {
     display:none;
+  }
+}
+@media screen and (max-width:380px) {
+  .navItem {
+    font-size: 0.8rem;
   }
 }
