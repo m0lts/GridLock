@@ -17,6 +17,7 @@
   --dark-grey: #404040;
   --light-grey: #EBEBEB;
   --red: #FF5757;
+  --green: #00BF36;
   --titillium: "Titillium Web", sans-serif;
 }
 
@@ -24,6 +25,16 @@ h1,
 h2 {
   font-family: "Oxygen", sans-serif;
   text-transform: uppercase;
+}
+h1 {
+  font-size: 3.5rem;
+}
+h2 {
+  font-size: 1rem;
+}
+h3 {
+  font-weight: 600;
+  font-size: 1.25rem;
 }
 
 /* Buttons */
@@ -47,6 +58,9 @@ h2 {
   background-color: var(--red);
   border: 1px solid var(--red);
 }
+.signUpBtnTxt {
+  margin-left: 5px;
+}
 
 .loginBtn {
   background-color: var(--black);
@@ -56,6 +70,8 @@ h2 {
 .submitBtn {
   background-color: var(--dark-grey);
   border: 1px solid var(--dark-grey);
+  align-self: center;
+  margin-top:50px;
 }
 
 /* Header */
@@ -172,4 +188,139 @@ header {
   .navItem {
     font-size: 0.8rem;
   }
+}
+
+/* Next Race Banner */
+.nextRaceBanner {
+  background-color: var(--black);
+  color:var(--white);
+  padding:0 3%;
+}
+.bannerHeroTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:10px 0;
+}
+.flagFill {
+  width:50px;
+  height:50px;
+  border-radius: 10px;
+}
+.bannerHeroMain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:25px 0;
+}
+.heroMainLeft {
+  width:50%;
+}
+.timerBox {
+  border-top:5px solid var(--green);
+  border-right: 5px solid var(--green);
+  border-radius: 0 50px 0 0;
+  width:75%;
+  margin-top: 50px;
+  padding:10px 0;
+}
+.timerTitle {
+  text-transform: uppercase;
+}
+.timer {
+  text-align: center;
+}
+.heroMainRight {
+  width:40%;
+}
+.circuitFill {
+  width: 100%;
+  height: 100%;
+}
+
+/* HomePage Middle Section */
+.homeMiddleSection {
+  width:100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.makePredictionWindow {
+  width:50%;
+}
+.MPtriangle {
+  width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 50px solid var(--black);
+  margin:0 auto;
+}
+.makePredictionHeader {
+  border-bottom:1px solid black;
+  border-right:1px solid black;
+  border-radius: 0 0 25px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width:75%;
+  margin: 50px auto;
+  padding:10px 15px;
+}
+.MPsubtitle {
+  text-transform: uppercase;
+}
+.MPFlag {
+  width:35px;
+  height:35px;
+  border-radius: 50px;
+}
+.makePredictionForm {
+  width:400px;
+  margin:0 auto;
+  padding:25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.formOptionCont {
+  border-top:2px solid black;
+  border-left:2px solid black;
+  border-right:2px solid black;
+  width:fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:5px;
+  padding:10px;
+  height:5px;
+  margin-bottom: 35px;
+}
+.makePredictionForm .p2Cont,
+.makePredictionForm .p4Cont,
+.makePredictionForm .p6Cont,
+.makePredictionForm .p8Cont,
+.makePredictionForm .p10Cont {
+  align-self: flex-end;
+}
+.formOptionCont label {
+  font-weight: 600;
+}
+.formSelectCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:10px;
+}
+.teamColor {
+  width:5px;
+  height:35px;
+  border: 5px solid red;
+}
+.dropdownElement {
+  border: none;
+  background-color: #ffffff00;
+  font-size: 1.25rem;
+  width:auto;
+  font-family: var(--titillium);
 }

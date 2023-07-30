@@ -16,8 +16,8 @@ function Icon({isLoggedIn}) {
 export function SignUpBtn() {
     return (
         <button className="btn signUpBtn">
-            <FontAwesomeIcon icon={faArrowRightToBracket} /> 
-            Sign Up
+            <FontAwesomeIcon icon={faArrowRightToBracket} />
+            <span className="signUpBtnTxt">Sign Up</span>
         </button>
     )
 }
@@ -32,9 +32,9 @@ export function LoginBtn() {
     )
 }
 
-export function SubmitBtn() {
+export function SubmitBtn({type}) {
     return (
-        <button className="btn submitBtn">
+        <button type={type} className="btn submitBtn">
             Submit
         </button>
     )
