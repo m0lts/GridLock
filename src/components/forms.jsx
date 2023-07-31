@@ -8,7 +8,7 @@ export function PredictionForm() {
             <div className="formOptionCont p1Cont">
                 <label for="p1">P1</label>
                 <div className="formSelectCont">
-                    <div className="teamColor"></div>
+                    <div className="teamColor" id="p1Color"></div>
                     <select name="p1-entry" id="p1" className="dropdownElement">
                         <option value="">???</option>
                         <option value="Albon">ALB</option>

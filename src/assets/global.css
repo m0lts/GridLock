@@ -18,6 +18,7 @@
   --light-grey: #EBEBEB;
   --red: #FF5757;
   --green: #00BF36;
+  --trans-white:#ffffffb2;
   --titillium: "Titillium Web", sans-serif;
 }
 
@@ -241,9 +242,21 @@ header {
 /* HomePage Middle Section */
 .homeMiddleSection {
   width:100%;
+  height:fit-content;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+}
+@media screen and (max-width:767px) {
+  .homeMiddleSection {
+    flex-direction: column;
+  }
+  .makePredictionWindow {
+    width: 100%;
+  }
+  .standingsWindow {
+    width:100%;
+  }
 }
 .makePredictionWindow {
   width:50%;
@@ -323,4 +336,38 @@ header {
   font-size: 1.25rem;
   width:auto;
   font-family: var(--titillium);
+}
+
+/* Standings window */
+.standingsWindow {
+  background-image: url('./interface/media/images/silverstone_podium.jpg');
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
+  width:50%;
+  height:100%;
+}
+.standingsWindowTitle {
+  color:var(--white);
+  text-transform: uppercase;
+  text-align: center;
+  margin:25px 0;
+}
+
+/* Global Standings table */ 
+.natTableFlag {
+  width:25px;
+  height:25px;
+}
+.globalStandingsTable.window {
+  background-color: var(--trans-white);
+  width:75%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+.tPos,
+.tFlag,
+.tUser,
+.tPoints {
+  text-align: center;
 }
