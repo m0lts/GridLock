@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import "../assets/global.css";
 import { SubmitBtn } from "./buttons";
 
@@ -8,7 +9,7 @@ export function PredictionForm() {
             <div className="formOptionCont p1Cont">
                 <label for="p1">P1</label>
                 <div className="formSelectCont">
-                    <div className="teamColor" id="p1Color"></div>
+                    <div className="colorBox" id="p1Color"></div>
                     <select name="p1-entry" id="p1" className="dropdownElement">
                         <option value="">???</option>
                         <option value="Albon">ALB</option>
@@ -37,7 +38,7 @@ export function PredictionForm() {
             <div className="formOptionCont p2Cont">
                 <label for="p2">P2</label>
                 <div className="formSelectCont">
-                    <div className="teamColor"></div>
+                    <div className="colorBox"></div>
                     <select name="p2-entry" id="p2" className="dropdownElement">
                         <option value="">???</option>
                         <option value="Albon">ALB</option>
@@ -66,7 +67,7 @@ export function PredictionForm() {
             <div className="formOptionCont p3Cont">
                 <label for="p3">P3</label>
                 <div className="formSelectCont">
-                    <div className="teamColor"></div>
+                    <div className="colorBox"></div>
                     <select name="p3-entry" id="p3" className="dropdownElement">
                         <option value="">???</option>
                         <option value="Albon">ALB</option>
@@ -95,7 +96,7 @@ export function PredictionForm() {
             <div className="formOptionCont p4Cont">
                 <label for="p4">P4</label>
                 <div className="formSelectCont">
-                    <div className="teamColor"></div>
+                    <div className="colorBox"></div>
                     <select name="p4-entry" id="p4" className="dropdownElement">
                         <option value="">???</option>
                         <option value="Albon">ALB</option>
@@ -124,7 +125,7 @@ export function PredictionForm() {
             <div className="formOptionCont p5Cont">
                 <label for="p5">P5</label>
                 <div className="formSelectCont">
-                    <div className="teamColor"></div>
+                    <div className="colorBox"></div>
                     <select name="p5-entry" id="p5" className="dropdownElement">
                         <option value="">???</option>
                         <option value="Albon">ALB</option>
@@ -153,7 +154,7 @@ export function PredictionForm() {
             <div className="formOptionCont p6Cont">
                 <label for="p6">P6</label>
                 <div className="formSelectCont">
-                    <div className="teamColor"></div>
+                    <div className="colorBox"></div>
                     <select name="p6-entry" id="p6" className="dropdownElement">
                         <option value="">???</option>
                         <option value="Albon">ALB</option>
@@ -182,7 +183,7 @@ export function PredictionForm() {
             <div className="formOptionCont p7Cont">
                 <label for="p7">P7</label>
                 <div className="formSelectCont">
-                    <div className="teamColor"></div>
+                    <div className="colorBox"></div>
                     <select name="p7-entry" id="p7" className="dropdownElement">
                         <option value="">???</option>
                         <option value="Albon">ALB</option>
@@ -211,7 +212,7 @@ export function PredictionForm() {
             <div className="formOptionCont p8Cont">
                 <label for="p8">P8</label>
                 <div className="formSelectCont">
-                    <div className="teamColor"></div>
+                    <div className="colorBox"></div>
                     <select name="p8-entry" id="p8" className="dropdownElement">
                         <option value="">???</option>
                         <option value="Albon">ALB</option>
@@ -240,7 +241,7 @@ export function PredictionForm() {
             <div className="formOptionCont p9Cont">
                 <label for="p9">P9</label>
                 <div className="formSelectCont">
-                    <div className="teamColor"></div>
+                    <div className="colorBox"></div>
                     <select name="p9-entry" id="p9" className="dropdownElement">
                         <option value="">???</option>
                         <option value="Albon">ALB</option>
@@ -269,7 +270,7 @@ export function PredictionForm() {
             <div className="formOptionCont p10Cont">
                 <label for="p10">P10</label>
                 <div className="formSelectCont">
-                    <div className="teamColor"></div>
+                    <div className="colorBox"></div>
                     <select name="p10-entry" id="p10" className="dropdownElement">
                         <option value="">???</option>
                         <option value="Albon">ALB</option>

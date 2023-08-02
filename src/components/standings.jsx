@@ -6,9 +6,9 @@ import brazil_flag from "../assets/interface/media/flags/brazil_flag.svg";
 export default function GlobalStandings() {
     return(
         <table className="globalStandingsTable window">
-            <tr>
-                <th className="tHeader">Position</th>
-                <th className="tHeader">Nationality</th>
+            <tr className="tableRow">
+                <th className="tHeader"><span className="tHeaderWide">Position</span><span className="tHeaderNarrow">Pos.</span></th>
+                <th className="tHeader"><span className="tHeaderWide">Nationality</span><span className="tHeaderNarrow">Nat.</span></th>
                 <th className="tHeader">Username</th>
                 <th className="tHeader">Points</th>
             </tr>
@@ -110,42 +110,6 @@ export default function GlobalStandings() {
             </tr>
             <tr>
                 <td className="tPos">17.</td>
-                <td className="tFlag"><img src={brazil_flag} alt="Brazil" className="natTableFlag" /></td>
-                <td className="tUser">braziliansmoke</td>
-                <td className="tPoints">298</td>
-            </tr>
-            <tr>
-                <td className="tPos">18.</td>
-                <td className="tFlag"><img src={brazil_flag} alt="Brazil" className="natTableFlag" /></td>
-                <td className="tUser">braziliansmoke</td>
-                <td className="tPoints">298</td>
-            </tr>
-            <tr>
-                <td className="tPos">19.</td>
-                <td className="tFlag"><img src={brazil_flag} alt="Brazil" className="natTableFlag" /></td>
-                <td className="tUser">braziliansmoke</td>
-                <td className="tPoints">298</td>
-            </tr>
-            <tr>
-                <td className="tPos">20.</td>
-                <td className="tFlag"><img src={brazil_flag} alt="Brazil" className="natTableFlag" /></td>
-                <td className="tUser">braziliansmoke</td>
-                <td className="tPoints">298</td>
-            </tr>
-            <tr>
-                <td className="tPos">21.</td>
-                <td className="tFlag"><img src={brazil_flag} alt="Brazil" className="natTableFlag" /></td>
-                <td className="tUser">braziliansmoke</td>
-                <td className="tPoints">298</td>
-            </tr>
-            <tr>
-                <td className="tPos">22.</td>
-                <td className="tFlag"><img src={brazil_flag} alt="Brazil" className="natTableFlag" /></td>
-                <td className="tUser">braziliansmoke</td>
-                <td className="tPoints">298</td>
-            </tr>
-            <tr>
-                <td className="tPos">23.</td>
                 <td className="tFlag"><img src={brazil_flag} alt="Brazil" className="natTableFlag" /></td>
                 <td className="tUser">braziliansmoke</td>
                 <td className="tPoints">298</td>

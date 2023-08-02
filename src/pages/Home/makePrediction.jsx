@@ -7,7 +7,6 @@ import BelgianFlag from "../../assets/interface/media/flags/belgium_flag.svg";
 export default function MakePrediction() {
     return (
         <div className="makePredictionWindow">
-            <div className="MPtriangle"></div>
             <div className="makePredictionHeader">
                 <h3 className="timerMP">21:03:57</h3>
                 <h3 className="MPsubtitle">Belgian GP</h3>
