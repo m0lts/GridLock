@@ -12,7 +12,7 @@ export default function PrevRoundStats() {
                         <img src={hungary_flag} alt="" />
                         <h4 className="pRSubtitle">Hungary Race Result</h4>
                     </div>
-                    <ol className="prevRaceResult">
+                    <ul className="prevRaceResult">
                         <li className="prevResultItem">
                             <span className="driverNum">33</span>
                             <span className="driverFN">Max</span>
@@ -63,7 +63,7 @@ export default function PrevRoundStats() {
                             <span className="driverFN">Max</span>
                             <span className="driverSN">Verstappen</span>
                         </li>
-                    </ol>
+                    </ul>
                 </div>
                 <div className="prevRoundStatsBox">
                     <div className="pointsScored">

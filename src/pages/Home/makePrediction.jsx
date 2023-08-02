@@ -9,7 +9,7 @@ export default function MakePrediction() {
         <div className="makePredictionWindow">
             <div className="makePredictionHeader">
                 <h3 className="timerMP">21:03:57</h3>
-                <h3 className="MPsubtitle">Belgian GP</h3>
+                <h3 className="MPsubtitle">make prediction</h3>
                 <img src={BelgianFlag} alt="Belgian Flag" className="MPFlag" />
             </div>
             <PredictionForm />
