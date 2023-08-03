@@ -3,7 +3,7 @@ import "../../assets/global.css";
 import BelgianFlag from "../../assets/interface/media/flags/belgium_flag.svg";
 import BelgianCircuit from "../../assets/interface/media/circuits/belgium_track.png";
 
-export default function NextRace() {
+export default function GrandPrix() {
     return (
         <section className="nextRaceBanner">
             <div className="bannerHeroTop">

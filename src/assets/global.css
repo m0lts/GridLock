@@ -12,7 +12,7 @@
 
 :root {
   font-family: "Titillium Web", sans-serif;
-  --black: #000000;
+  --black: #2b2b2b;
   --white: #ffffff;
   --dark-grey: #404040;
   --light-grey: #EBEBEB;
@@ -93,51 +93,11 @@ header {
   width:100%;
   margin:0 auto;
   padding:0 25px;
-}
-.headerLeftFlex {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width:fit-content;
-  gap:50px;
+  background-color: var(--red);
 }
 .logoImg {
   width:100px;
   height:100px;
-}
-.navList {
-  width:300px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.navItem {
-  list-style: none;
-}
-.navItem:hover,
-.navItem:active {
-  font-weight: 600;
-  cursor: pointer;
-}
-.navItem:active {
-  color:var(--dark-grey);
-}
-.navItem.onPage {
-  font-weight: 600;
-}
-.navItem.onPage::before {
-  position: absolute;
-  margin-top:25px;
-  content: "";
-  width:50px;
-  height: 1px;
-  background: var(--red);
-}
-.navItem.narrowScreen {
-  display:none;
-}
-.iconNarrowWindow {
-  display:none;
 }
 .headerRightFlex {
   display: flex;
@@ -145,65 +105,44 @@ header {
   align-items: center;
   width:150px;
 }
-/* Header - below 768px */
-@media screen and (max-width:767px) {
-  header {
-    position: fixed;
-    border:2px solid var(--red);
-    bottom:0px;
-    background-color: var(--white);
-    color: var(--black);
-    padding:0px;
-  }
-  .headerLeftFlex {
-    width:100%;
-  }
-  .logoImg {
-    display:none;
-  }
-  .navList {
-    width:100%;
-    justify-content: space-around;
-  }
-  .navItem {
-    width:25%;
-    padding:15px 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap:5px;
-  }
-  .navItem:hover {
-    background-color: var(--light-grey);
-  }
-  .navItem.onPage {
-    background-color: var(--black);
-    color: var(--white);
-  }
-  .navItem.onPage::before {
-    width:0;
-    height:0;
-  }
-  .navItem.narrowScreen {
-    display:flex;
-  }
-  .iconNarrowWindow {
-    display:block;
-  }
-  .headerRightFlex {
-    display:none;
-  }
-}
-@media screen and (max-width:380px) {
-  .navItem {
-    font-size: 0.8rem;
-  }
+
+/* APP */
+.appBackground {
+  background-color: var(--black);
 }
 
-/* HOMEPAGE */
-.homePage {
-  background-color: var(--black);
+/* Section 1 (inc. windows 1 and 2) */
+.sectionOne {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.windowOne {
+  background-color: var(--white);
+  width:45%;
+}
+.windowTwo {
+  background-color: var(--white);
+  width:45%;
+}
+
+/* Section 2 (inc. window 3) */
+.sectionTwo {
+  width:100%;
+}
+.windowThree {
+  background-image: url('./interface/media/images/silverstone_podium.jpg');
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
+  width:95%;
+  margin:0 auto;
+}
+.standingsWindowTitle {
+  color:var(--white);
+  text-transform: uppercase;
+  text-align: center;
+  margin:25px 0;
 }
 
 /* Next Race Banner */
@@ -354,18 +293,7 @@ header {
 }
 
 /* Standings window */
-.standingsWindow {
-  background-image: url('./interface/media/images/silverstone_podium.jpg');
-  background-position: center;
-  background-repeat: none;
-  background-size: cover;
-}
-.standingsWindowTitle {
-  color:var(--white);
-  text-transform: uppercase;
-  text-align: center;
-  margin:25px 0;
-}
+
 
 /* Global Standings table */ 
 .natTableFlag {
