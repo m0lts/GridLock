@@ -58,15 +58,21 @@ h4 {
 }
 .btn:hover,
 .btn:active {
-  opacity: 0.75;
+  opacity: 0.9;
 }
 .btn:active {
   border: 1px solid var(--white);
+  opacity: 1;
 }
 
 .signUpBtn {
-  background-color: var(--red);
-  border: 1px solid var(--red);
+  background-color: var(--light-grey);
+  border: 1px solid var(--light-grey);
+  color:var(--black);
+  font-size: 1rem;
+}
+.signUpBtn:active {
+  border: 1px solid var(--black);
 }
 .signUpBtnTxt {
   margin-left: 5px;
@@ -74,7 +80,8 @@ h4 {
 
 .loginBtn {
   background-color: var(--black);
-  border:1px solid var(--black)
+  border:1px solid var(--black);
+  font-size: 1rem;
 }
 
 .submitBtn {
@@ -92,7 +99,7 @@ header {
   align-items: center;
   width:100%;
   margin:0 auto;
-  padding:0 25px;
+  padding:5px 5%;
   background-color: var(--red);
 }
 .logoImg {
@@ -103,19 +110,27 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width:150px;
+  width:200px;
 }
 
 /* APP */
 .appBackground {
   background-color: var(--black);
+  border: 1px solid var(--black);
+}
+.windowOne,
+.windowTwo,
+.windowThree,
+.windowFour {
+  border-radius: 25px;
 }
 
 /* Section 1 (inc. windows 1 and 2) */
 .sectionOne {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  gap:2.5%;
 }
 .windowOne {
   background-color: var(--white);
@@ -126,16 +141,22 @@ header {
   width:45%;
 }
 
-/* Section 2 (inc. window 3) */
+/* Section 2 (inc. windows 3 and 4) */
 .sectionTwo {
   width:100%;
+  margin:2.5% auto;
 }
 .windowThree {
   background-image: url('./interface/media/images/silverstone_podium.jpg');
   background-position: center;
   background-repeat: none;
   background-size: cover;
-  width:95%;
+  width:92.5%;
+  margin:0 auto;
+}
+.windowFour {
+  background-color: var(--light-grey);
+  width:92.5%;
   margin:0 auto;
 }
 .standingsWindowTitle {
@@ -145,10 +166,36 @@ header {
   margin:25px 0;
 }
 
+/* Footer */
+footer {
+  background-color: var(--light-grey);
+  padding:2.5% 5%;
+}
+.footerFlex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footerList {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.footerListItem {
+  list-style: none;
+}
+.copyright {
+  width:fit-content;
+  margin:0 auto;
+  margin-top:25px;
+  font-size: 0.75rem;
+}
+
 /* Next Race Banner */
 .nextRaceBanner {
   color:var(--white);
-  padding:0 3%;
+  padding:2.5% 5%;
 }
 .bannerHeroTop {
   display: flex;

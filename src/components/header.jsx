@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/interface/logos/logo_standard_vector.svg";
+import logo from "../assets/interface/logos/logo_whiteflag_blacktext.svg";
 import { SignUpBtn } from "./buttons";
 import { LoginBtn } from "./buttons";
 import "../assets/global.css";
