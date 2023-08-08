@@ -197,13 +197,11 @@ footer {
   color:var(--white);
   padding:2.5% 5%;
 }
-.bannerRoundCarousel {
-  border:1px solid red;
+.heroTop {
   width:100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding:10px 0;
 }
 .flagFill {
   width:50px;
@@ -240,8 +238,13 @@ footer {
   align-items: center;
   background-color: var(--dark-grey);
   border-radius: 25px;
-  padding: 50px;
+  padding: 25px;
 }
+.circuitImg {
+  width:100%;
+
+}
+
 .weekendSchedule {
   width:100%;
   display: flex;
