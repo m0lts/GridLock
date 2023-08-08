@@ -16,7 +16,7 @@
   --white: #ffffff;
   --dark-grey: #404040;
   --light-grey: #EBEBEB;
-  --red: #FF5757;
+  --red: #ff2929;
   --green: #00BF36;
   --trans-white:#ffffffb2;
   --titillium: "Titillium Web", sans-serif;
@@ -103,8 +103,8 @@ header {
   background-color: var(--red);
 }
 .logoImg {
-  width:100px;
-  height:100px;
+  width:75px;
+  height:75px;
 }
 .headerRightFlex {
   display: flex;
@@ -197,9 +197,11 @@ footer {
   color:var(--white);
   padding:2.5% 5%;
 }
-.bannerHeroTop {
+.bannerRoundCarousel {
+  border:1px solid red;
+  width:100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding:10px 0;
 }
@@ -232,7 +234,38 @@ footer {
   text-align: center;
 }
 .heroMainRight {
-  width:40%;
+  width:50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark-grey);
+  border-radius: 25px;
+  padding: 50px;
+}
+.weekendSchedule {
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  gap:5px;
+}
+.sessionItem {
+  list-style: none;
+  background-color: var(--light-grey);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--black);
+  gap:10px;
+  padding:10px;
+  border-radius: 5px;
+  min-width: 100px;
+  font-size: 1.1rem;
+}
+.session {
+  font-weight: 600;
+}
+.circuitCredit {
+  font-size: 0.75rem;
 }
 .circuitFill {
   width: 100%;
