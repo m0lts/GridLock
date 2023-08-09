@@ -68,7 +68,7 @@ export default function GrandPrix() {
                     setRaceStartTime(addZero(days) + ":" + addZero(hours) + ":" + addZero(minutes) + ":" + addZero(seconds));
                     if (distance < 0) {
                         clearInterval(countdown);
-                        setRaceStartTime('Race has started');
+                        setRaceStartTime('00:00:00');
                     }
                 }, 1000);
             } catch (error) {
