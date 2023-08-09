@@ -92,6 +92,12 @@ h4 {
   font-size: 1.1rem;
 }
 
+
+/* ******STYLING FOR ALL COMPONENTS CONSTANTLY ON PAGE****** */
+/* ****** */
+/* ****** */
+
+
 /* Header */
 header {
   display: flex;
@@ -113,7 +119,6 @@ header {
   width:200px;
 }
 
-/* APP */
 .appBackground {
   background-color: var(--black);
   border: 1px solid var(--black);
@@ -123,73 +128,6 @@ header {
 .windowThree,
 .windowFour {
   border-radius: 25px;
-}
-
-/* Section 1 (inc. windows 1 and 2) */
-.sectionOne {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap:2.5%;
-}
-.windowOne {
-  background-color: var(--white);
-  width:45%;
-}
-.windowTwo {
-  background-color: var(--white);
-  width:45%;
-}
-
-/* Section 2 (inc. windows 3 and 4) */
-.sectionTwo {
-  width:100%;
-  margin:2.5% auto;
-}
-.windowThree {
-  background-image: url('./interface/media/images/silverstone_podium.jpg');
-  background-position: center;
-  background-repeat: none;
-  background-size: cover;
-  width:92.5%;
-  margin:0 auto;
-}
-.windowFour {
-  background-color: var(--light-grey);
-  width:92.5%;
-  margin:0 auto;
-}
-.standingsWindowTitle {
-  color:var(--white);
-  text-transform: uppercase;
-  text-align: center;
-  margin:25px 0;
-}
-
-/* Footer */
-footer {
-  background-color: var(--light-grey);
-  padding:2.5% 5%;
-}
-.footerFlex {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.footerList {
-  width: 60%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-.footerListItem {
-  list-style: none;
-}
-.copyright {
-  width:fit-content;
-  margin:0 auto;
-  margin-top:25px;
-  font-size: 0.75rem;
 }
 
 /* Next Race Banner */
@@ -242,39 +180,10 @@ footer {
 }
 .circuitImg {
   width:100%;
-
-}
-
-.weekendSchedule {
-  width:100%;
-  display: flex;
-  justify-content: space-between;
-  gap:5px;
-}
-.sessionItem {
-  list-style: none;
-  background-color: var(--light-grey);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: var(--black);
-  gap:10px;
-  padding:10px;
-  border-radius: 5px;
-  min-width: 100px;
-  font-size: 1.1rem;
-}
-.session {
-  font-weight: 600;
 }
 .circuitCredit {
   font-size: 0.75rem;
 }
-.circuitFill {
-  width: 100%;
-  height: 100%;
-}
-
 /* Next Race banner media queries */
 @media screen and (max-width:1100px) {
   .heroMainLeft {
@@ -287,23 +196,105 @@ footer {
   }
 }
 
-/* HomePage Middle Section */
-.homeMiddleSection {
-  width:100%;
-  height:fit-content;
+/* Section 1 (inc. windows 1 and 2)
+INCLUDES COMMON STYLING FOR WINDOWS 1 AND 2
+*/
+.sectionOne {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  background-color: var(--black);
+  justify-content: center;
+  align-items: center;
+  gap:2.5%;
 }
-.makePredictionWindow, .standingsWindow {
-  width:48%;
-  margin:1%;
-  box-shadow: 5px 5px 15px var(--white);
-  border-radius: 25px;
-  height:900px;
+.windowOne,
+.windowTwo {
+  background-color: var(--white);
+  width:45%;
+  height:800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.makePredictionWindow {
+/* WINDOWS 1 AND 2 TITLE BANNERS INCLUDING ARROW FUNC */
+.windowHeadingBanners {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+  height: 10%;
+  padding: 15px 25px 0 25px;
+  background-color: var(--light-grey);
+  border-radius: 25px 25px 0 0;
+}
+.windowHeadingTitleAndArrows {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+}
+.faArrows {
+  padding:5px;
+  cursor: pointer;
+}
+.activeWindowCont {
+  display: flex;
+  width:fit-content;
+  margin:0 auto;
+}
+.activeWindowDot {
+  list-style: none;
+  padding:0 5px;
+}
+.faCircleDot, 
+.faCircle {
+  color: var(--dark-grey);
+  font-size: 0.5rem;
+}
+
+
+
+
+
+
+
+
+/* Section 2 (inc. windows 3 and 4) */
+.sectionTwo {
+  width:100%;
+  margin:2.5% auto;
+}
+.windowThree {
+  background-image: url('./interface/media/images/silverstone_podium.jpg');
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
+  width:92.5%;
+  margin:0 auto;
+}
+.windowFour {
+  background-color: var(--light-grey);
+  width:92.5%;
+  margin:0 auto;
+}
+.standingsWindowTitle {
+  color:var(--white);
+  text-transform: uppercase;
+  text-align: center;
+  margin:25px 0;
+}
+
+
+
+
+
+/* ******INDIVIDUAL COMPONENT STYLING****** */
+/* ****** */
+/* ****** */
+
+/* MAKE PREDICTION COMP */
+
+.windowContent {
+  border:1px solid blue;
+  height:80%;
+  width:100%;
   background-color: var(--white);
 }
 .makePredictionHeader {
@@ -325,7 +316,47 @@ footer {
   height:35px;
   border-radius: 50px;
 }
-.makePredictionForm {
+
+
+/* Footer */
+footer {
+  background-color: var(--light-grey);
+  padding:2.5% 5%;
+}
+.footerFlex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footerList {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.footerListItem {
+  list-style: none;
+}
+.copyright {
+  width:fit-content;
+  margin:0 auto;
+  margin-top:25px;
+  font-size: 0.75rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .makePredictionForm {
   width:400px;
   margin:0 auto;
   padding:25px;
@@ -373,13 +404,13 @@ footer {
   font-size: 1.25rem;
   width:auto;
   font-family: var(--titillium);
-}
+} */
 
 /* Standings window */
 
 
 /* Global Standings table */ 
-.natTableFlag {
+/* .natTableFlag {
   width:25px;
   height:25px;
 }
@@ -409,7 +440,7 @@ footer {
 }
 
 /* Home page middle section media queries */
-@media screen and (max-width:1100px) {
+/* @media screen and (max-width:1100px) {
   .makePredictionForm {
     width:325px;
     margin-bottom: 25px;
@@ -444,10 +475,10 @@ footer {
   .MPFlag {
     display: none;
   }
-}
+} */
 
 /* Home page bottom section - last round stats */
-.prevRoundStats {
+/* .prevRoundStats {
   background-color: var(--dark-grey);
   width: 99%;
   border-radius: 0 25px 25px 0;
@@ -557,4 +588,4 @@ footer {
   font-weight: bold;
   text-align: center;
   padding-top:25px;
-}
+}  */

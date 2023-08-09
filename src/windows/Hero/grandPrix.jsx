@@ -82,7 +82,7 @@ export default function GrandPrix() {
     return (
         <section className="nextRaceBanner">
             <div className="heroTop">
-                <img src={flag} alt="Belgian Flag" className="flagFill"/>
+                <img src={flag} alt={circuitName + " Flag"} className="flagFill"/>
                 <h3>Round {round}</h3>
             </div>
             <div className="bannerHeroMain">
@@ -97,7 +97,7 @@ export default function GrandPrix() {
                     </div>
                 </div>
                 <div className="heroMainRight">
-                    <img className="circuitImg" src={circuitTrackImg} alt="" />
+                    <img className="circuitImg" src={circuitTrackImg} alt={circuitName + " Track"} />
                 </div>
             </div>
         </section>
