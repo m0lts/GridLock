@@ -155,6 +155,10 @@ header {
 .heroMainLeft {
   width:50%;
 }
+.grandPrixName {
+  padding:5px 0;
+  font-size: 1.5rem;
+}
 .timerBox {
   border-top:5px solid var(--green);
   border-right: 5px solid var(--green);
@@ -174,9 +178,15 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap:25px;
   background-color: var(--dark-grey);
   border-radius: 25px;
   padding: 25px;
+}
+.raceName,
+.grandPrixName {
+  font-family: var(--titillium);
 }
 .circuitImg {
   width:100%;
@@ -199,6 +209,11 @@ header {
 /* Section 1 (inc. windows 1 and 2)
 INCLUDES COMMON STYLING FOR WINDOWS 1 AND 2
 */
+.windowContent {
+  height:100%;
+  width:100%;
+  background-color: var(--white);
+}
 .sectionOne {
   display: flex;
   justify-content: center;
@@ -214,14 +229,28 @@ INCLUDES COMMON STYLING FOR WINDOWS 1 AND 2
   flex-direction: column;
   justify-content: space-between;
 }
+@media screen and (max-width:767px) {
+  .sectionOne {
+    flex-direction: column;
+  }
+  .windowOne,
+  .windowTwo {
+    width:90%;
+    height:1000px;
+  }
+  .windowHeadingTitleAndArrows h3 {
+    font-size: 1.1rem;
+  }
+}
+
 /* WINDOWS 1 AND 2 TITLE BANNERS INCLUDING ARROW FUNC */
 .windowHeadingBanners {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: space-between;
-  height: 10%;
-  padding: 15px 25px 0 25px;
+  padding: 25px 25px 10px 25px;
+  gap:5px;
   background-color: var(--light-grey);
   border-radius: 25px 25px 0 0;
 }
@@ -290,32 +319,38 @@ INCLUDES COMMON STYLING FOR WINDOWS 1 AND 2
 /* ****** */
 
 /* MAKE PREDICTION COMP */
-
-.windowContent {
-  border:1px solid blue;
-  height:80%;
+.makePredictionWindow {
   width:100%;
-  background-color: var(--white);
 }
-.makePredictionHeader {
-  border-bottom:1px solid black;
-  border-right:1px solid black;
-  border-radius: 0 0 25px 0;
-  display: flex;
-  justify-content: space-between;
+.makePredictionInfo {
+  text-align: center;
+  padding:15px;
+  background-color: var(--red);
+  color: var(--white);
+}
+.qualifyingCountdown {
+  font-size: 1.25rem;
+}
+
+/* Unpicked driver */
+.unpickedDriver {
+  list-style: none;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  width:75%;
-  margin: 50px auto;
-  padding:10px 15px;
 }
-.MPsubtitle {
-  text-transform: uppercase;
+.unpickedDriverNumber {
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: bold;
+  padding:15px;
+  border-radius: 50%;
+  background-color: #000000;
+  color: var(--white);
 }
-.MPFlag {
-  width:35px;
-  height:35px;
-  border-radius: 50px;
-}
+
+
 
 
 /* Footer */
