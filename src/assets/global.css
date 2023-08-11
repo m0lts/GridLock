@@ -213,6 +213,7 @@ INCLUDES COMMON STYLING FOR WINDOWS 1 AND 2
   height:100%;
   width:100%;
   background-color: var(--white);
+  border-radius: 0 0 25px 25px;
 }
 .sectionOne {
   display: flex;
@@ -224,11 +225,12 @@ INCLUDES COMMON STYLING FOR WINDOWS 1 AND 2
 .windowTwo {
   background-color: var(--white);
   width:45%;
-  height:800px;
+  height:auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+
 @media screen and (max-width:767px) {
   .sectionOne {
     flex-direction: column;
@@ -332,24 +334,40 @@ INCLUDES COMMON STYLING FOR WINDOWS 1 AND 2
   font-size: 1.25rem;
 }
 
-/* Unpicked driver */
-.unpickedDriver {
-  list-style: none;
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+/* Prediction Form */
+.makePredictionFormCont {
+  overflow: hidden;
+  border:5px solid green;
 }
-.unpickedDriverNumber {
-  font-size: 1.5rem;
-  font-style: italic;
+.makePredictionForm {
+  border:1px solid red;
+  height:100%;
+}
+.formOptionCont {
+  border:1px solid black;
+  margin:25px;
+  text-align: center;
+}
+.formOptionCont label {
+  font-size: 0.8rem;
+  color: var(--dark-grey);
   font-weight: bold;
-  padding:15px;
-  border-radius: 50%;
-  background-color: #000000;
-  color: var(--white);
+}
+.formSelectCont {
+  border:1px solid blue;
+}
+.dropdownElement {
+  border:none;
+  font-family: var(--titillium);
+  cursor: pointer;
+  font-size: 1.1rem;
 }
 
+
+/* Predictions unpicked */
+.unpickedDriver {
+  border:1px solid red;
+}
 
 
 

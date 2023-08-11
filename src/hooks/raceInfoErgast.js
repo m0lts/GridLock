@@ -122,3 +122,15 @@ export function RaceInformation() {
         qualifyingStartTime
     }
 }
+
+export function DriverInformation() {
+    useEffect(() => {
+        async function fetchDriverData() {
+            const responses = await fetch('https://ergast.com/api/f1/current/drivers.json');
+            const datas = await responses.json();
+            console.log(datas);
+        }
+        fetchDriverData()
+    }, []);
+    
+}

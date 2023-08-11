@@ -9,29 +9,30 @@ export function PredictionForm() {
             <div className="formOptionCont p1Cont">
                 <label for="p1">P1</label>
                 <div className="formSelectCont">
-                    <div className="colorBox" id="p1Color"></div>
                     <select name="p1-entry" id="p1" className="dropdownElement">
                         <option value="">???</option>
-                        <option value="Albon">ALB</option>
-                        <option value="Alonso">ALO</option>
-                        <option value="Bottas">BOT</option>
-                        <option value="Gasly">GAS</option>
-                        <option value="Hamilton">HAM</option>
-                        <option value="Hulkenberg">HUL</option>
-                        <option value="Leclerc">LEC</option>
-                        <option value="Magnussen">MAG</option>
-                        <option value="Norris">NOR</option>
-                        <option value="Ocon">OCO</option>
-                        <option value="Perez">PER</option>
-                        <option value="Piastri">PIA</option>
-                        <option value="Ricciardo">RIC</option>
-                        <option value="Russell">RUS</option>
-                        <option value="Sainz">SAI</option>
-                        <option value="Sargeant">SAR</option>
-                        <option value="Stroll">STR</option>
-                        <option value="Tsunoda">TSU</option>
-                        <option value="Verstappen">VER</option>
-                        <option value="Zhou">ZHO</option>
+                        <option value="Albon" className="albon">
+                            Alex ALBON
+                        </option>
+                        <option value="Alonso">Fernando ALONSO</option>
+                        <option value="Bottas">Valterri BOTTAS</option>
+                        <option value="Gasly">Pierre GASLY</option>
+                        <option value="Hamilton">Lewis HAMILTON</option>
+                        <option value="Hulkenberg">Niko HULKENBERG</option>
+                        <option value="Leclerc">Charles LECLERC</option>
+                        <option value="Magnussen">Kevin MAGNUSSEN</option>
+                        <option value="Norris">Lando NORRIS</option>
+                        <option value="Ocon">Esteban OCON</option>
+                        <option value="Perez">Sergio PEREZ</option>
+                        <option value="Piastri">Oscar PIASTRI</option>
+                        <option value="Ricciardo">Daniel RICCIARDO</option>
+                        <option value="Russell">George RUSSELL</option>
+                        <option value="Sainz">Carlos SAINZ</option>
+                        <option value="Sargeant">Logan SARGEANT</option>
+                        <option value="Stroll">Lance STROLL</option>
+                        <option value="Tsunoda">Yuki TSUNODA</option>
+                        <option value="Verstappen">Max VERSTAPPEN</option>
+                        <option value="Zhou">Guanyo ZHOU</option>
                     </select>
                 </div>
             </div>
