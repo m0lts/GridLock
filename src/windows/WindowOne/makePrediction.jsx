@@ -1,6 +1,6 @@
 import React from "react";
 import { StaticRaceInformation, DynamicRaceInformation } from "../../hooks/raceInfoErgast";
-import { DriverInformation } from "../../hooks/driverInfoErgast";
+import { driverInfo } from "../../data/driverInfo";
 import { PredictionForm } from "../../components/forms";
 import "../../assets/global.css";
 import BelgianFlag from "../../assets/interface/media/flags/belgium_flag.svg";
@@ -8,23 +8,17 @@ import { useState, useEffect } from "react";
 
 
 export default function MakePrediction() {
+
+    const [positionCounter, setPositionCounter] = useState(1);
+
+
     // GET API RACE DATA
     const { grandPrixName } = StaticRaceInformation();
     const { qualifyingStartTime } = DynamicRaceInformation();
-    
-    // GET API DRIVER DATA
-    const { drivers } = DriverInformation();
-    // HANDLE PICKED DRIVER LISTS
-    const initialUnpickedDrivers = drivers.map(driver => ({
-        number: driver.permanentNumber,
-        givenName: driver.givenName,
-        familyName: driver.familyName,
-        fullName: `${driver.givenName} ${driver.familyName}`,
-        code: driver.code,
-    }));
 
+    const driverDetails = driverInfo;
 
-    const [unpickedDrivers, setUnpickedDrivers] = useState(initialUnpickedDrivers);
+    const [unpickedDrivers, setUnpickedDrivers] = useState(driverDetails);
     const [pickedDrivers, setPickedDrivers] = useState([]);
 
     const handlePickDriver = (driver) => {
@@ -52,16 +46,17 @@ export default function MakePrediction() {
                 <ul className="unpickedDrivers">
                     {unpickedDrivers.map((driver, index) => (
                     <li key={index} className="unpickedDriver" onClick={() => handlePickDriver(driver)}>
-                        {driver.number}
+                        {driver.firstName} {driver.lastName}
                     </li>
                     ))}
                 </ul>
             </div>
             <div className="pickedDriversCont">
                 <h3>Picked Drivers</h3>
-                <table className="pickedDrivers">
-                    <thead>
+                <table className="pickedDriversTable">
+                    <thead className="pickedDriversTableHeader">
                         <tr>
+                            <td>Position</td>
                             <td>Number</td>
                             <td>Name</td>
                         </tr>
@@ -69,8 +64,9 @@ export default function MakePrediction() {
                     <tbody>
                     {pickedDrivers.map((driver, index) => (
                     <tr key={index} onClick={() => handleUnpickDriver(driver)}>
-                        <td>{driver.number}</td>
-                        <td>{driver.fullName}</td>
+                        <td className="position">{positionCounter + index}</td>
+                        <td className="driverNumber">{driver.number}</td>
+                        <td><span className="driverFirstName">{driver.firstName}</span> <span className="driverLastName">{driver.lastName}</span></td>
                     </tr>
                     ))}
                     </tbody>

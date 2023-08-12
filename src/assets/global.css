@@ -368,7 +368,33 @@ INCLUDES COMMON STYLING FOR WINDOWS 1 AND 2
 .unpickedDriver {
   border:1px solid red;
 }
-
+.pickedDriversTable {
+  border:1px solid red;
+  width:90%;
+  margin:15px auto;
+}
+.pickedDriversTableHeader {
+  font-size: 0.8rem;
+  color:var(--dark-grey);
+  font-weight: 600;
+  text-align: center;
+}
+.position {
+  text-align: center;
+}
+.driverNumber {
+  color: var(--dark-grey);
+  font-style: italic;
+  text-align: center;
+}
+.driverFirstName {
+  color:var(--dark-grey);
+  font-size: 0.9rem;
+}
+.driverLastName {
+  font-weight: bold;
+  text-transform: uppercase;
+}
 
 
 /* Footer */

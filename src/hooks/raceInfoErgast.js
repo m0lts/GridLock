@@ -73,64 +73,86 @@ export function DynamicRaceInformation() {
 
         
             // SET RACE TIME COUNTDOWN
-        const raceTime = deconstructedAPI.time;
-        let timeString = raceTime.split("");
-        timeString.pop();
-        timeString[1]++;
-        const returnedRaceTime = timeString.join("");
-        const raceDate = deconstructedAPI.date;
-        let countdownDate = new Date(`${raceDate} ${returnedRaceTime}`);
-        let countdown = setInterval(function() {
-            let now = new Date().getTime();
-            let distance = countdownDate - now;
-            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            const raceTime = deconstructedAPI.time;
+            let raceTimeString = raceTime.split("");
+            raceTimeString.pop();
+            raceTimeString[1]++;
+            const returnedRaceTime = raceTimeString.join("");
+    
+            const raceDate = deconstructedAPI.date;
+            const raceCountdownDate = new Date(`${raceDate} ${returnedRaceTime}`);
+    
+            let distance, days, hours, minutes, seconds;
             const addZero = (num) => {
                 if (num < 10) {
-                    num = "0" + num;
-                    return num;
+                    return "0" + num;
                 } else {
                     return num;
                 }
-            }
-            setRaceStartTime(addZero(days) + ":" + addZero(hours) + ":" + addZero(minutes) + ":" + addZero(seconds));
-            if (distance < 0) {
-                clearInterval(countdown);
-                setRaceStartTime('00:00:00');
-            }
-        }, 1000);
+            };
+    
+            const initialRaceDistance = raceCountdownDate - new Date().getTime();
+            days = Math.floor(initialRaceDistance / (1000 * 60 * 60 * 24));
+            hours = Math.floor((initialRaceDistance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            minutes = Math.floor((initialRaceDistance % (1000 * 60 * 60)) / (1000 * 60));
+            seconds = Math.floor((initialRaceDistance % (1000 * 60)) / 1000);
+    
+            const initialRaceStartTime = addZero(days) + ":" + addZero(hours) + ":" + addZero(minutes) + ":" + addZero(seconds);
+    
+            setRaceStartTime(initialRaceStartTime);
+    
+            const raceCountdown = setInterval(function() {
+                let now = new Date().getTime();
+                distance = raceCountdownDate - now;
+                days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+                if (distance < 0) {
+                    clearInterval(raceCountdown);
+                    setRaceStartTime('00:00:00');
+                } else {
+                    setRaceStartTime(addZero(days) + ":" + addZero(hours) + ":" + addZero(minutes) + ":" + addZero(seconds));
+                }
+            }, 1000);
 
-        // SET QUALIFYING TIME COUNTDOWN
-        const qualiTime = deconstructedAPI.Qualifying.time;
-        let qualiTimeString = qualiTime.split("");
-        qualiTimeString.pop();
-        qualiTimeString[1]++;
-        const returnedQualiTime = qualiTimeString.join("");
-        const qualiDate = deconstructedAPI.Qualifying.date;
-        let qualiCountdownDate = new Date(`${qualiDate} ${returnedQualiTime}`);
-        let qualiCountdown = setInterval(function() {
-            let now = new Date().getTime();
-            let distance = qualiCountdownDate - now;
-            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            const addZero = (num) => {
-                if (num < 10) {
-                    num = "0" + num;
-                    return num;
+            // SET QUALIFYING TIME COUNTDOWN
+            const qualiTime = deconstructedAPI.Qualifying.time;
+            let qualiTimeString = qualiTime.split("");
+            qualiTimeString.pop();
+            qualiTimeString[1]++;
+            const returnedQualiTime = qualiTimeString.join("");
+
+            const qualiDate = deconstructedAPI.Qualifying.date;
+            const qualiCountdownDate = new Date(`${qualiDate} ${returnedQualiTime}`);
+
+            const initialDistance = qualiCountdownDate - new Date().getTime();
+            days = Math.floor(initialDistance / (1000 * 60 * 60 * 24));
+            hours = Math.floor((initialDistance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            minutes = Math.floor((initialDistance % (1000 * 60 * 60)) / (1000 * 60));
+            seconds = Math.floor((initialDistance % (1000 * 60)) / 1000);
+
+            const initialQualifyingStartTime = addZero(days) + ":" + addZero(hours) + ":" + addZero(minutes) + ":" + addZero(seconds);
+
+            setQualifyingStartTime(initialQualifyingStartTime);
+
+            const qualiCountdown = setInterval(function() {
+                let now = new Date().getTime();
+                distance = qualiCountdownDate - now;
+                days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                if (distance < 0) {
+                    clearInterval(qualiCountdown);
+                    setQualifyingStartTime('00:00:00');
                 } else {
-                    return num;
+                    setQualifyingStartTime(addZero(days) + ":" + addZero(hours) + ":" + addZero(minutes) + ":" + addZero(seconds));
                 }
-            }
-            setQualifyingStartTime(addZero(days) + ":" + addZero(hours) + ":" + addZero(minutes) + ":" + addZero(seconds));
-            if (distance < 0) {
-                clearInterval(qualiCountdown);
-                setQualifyingStartTime('00:00:00');
-            }
-        }, 1000);}
+            }, 1000);
+        }
         catch (error) {
             console.error(error);
         }
