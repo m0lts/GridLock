@@ -1,38 +1,28 @@
 import React from "react";
-import { RaceInformation, DriverInformation } from "../../hooks/raceInfoErgast";
+import { StaticRaceInformation, DynamicRaceInformation } from "../../hooks/raceInfoErgast";
+import { DriverInformation } from "../../hooks/driverInfoErgast";
 import { PredictionForm } from "../../components/forms";
 import "../../assets/global.css";
 import BelgianFlag from "../../assets/interface/media/flags/belgium_flag.svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
-export default function MakePrediction({...props}) {
-    // GET API DATA
-    const { grandPrixName, qualifyingStartTime } = RaceInformation();
-
+export default function MakePrediction() {
+    // GET API RACE DATA
+    const { grandPrixName } = StaticRaceInformation();
+    const { qualifyingStartTime } = DynamicRaceInformation();
+    
+    // GET API DRIVER DATA
+    const { drivers } = DriverInformation();
     // HANDLE PICKED DRIVER LISTS
-    const initialUnpickedDrivers = [
-        { number: 5, name: "Alex ALBON"}, 
-        { number: 10, name: "Fernando ALONSO"}, 
-        { number: 10, name: "Valterri BOTTAS"}, 
-        { number: 10, name: "Pierre GASLY"}, 
-        { number: 10, name: "Lewis HAMILTON"}, 
-        { number: 10, name: "Niko HULKENBERG"}, 
-        { number: 10, name: "Charles LECLERC"}, 
-        { number: 10, name: "Kevin MAGNUSSEN"}, 
-        { number: 10, name: "Lando NORRIS"}, 
-        { number: 10, name: "Esteban OCON"}, 
-        { number: 10, name: "Sergio PEREZ"}, 
-        { number: 10, name: "Oscar PIASTRI"}, 
-        { number: 10, name: "Daniel RICCIARDO"}, 
-        { number: 10, name: "George RUSSELL"}, 
-        { number: 10, name: "Carlos SAINZ"}, 
-        { number: 10, name: "Logan SARGEANT"}, 
-        { number: 10, name: "Lance STROLL"}, 
-        { number: 10, name: "Yuki TSUNODA"}, 
-        { number: 10, name: "Max VERSTAPPEN"}, 
-        { number: 10, name: "Guanyo ZHOU"}
-    ];
+    const initialUnpickedDrivers = drivers.map(driver => ({
+        number: driver.permanentNumber,
+        givenName: driver.givenName,
+        familyName: driver.familyName,
+        fullName: `${driver.givenName} ${driver.familyName}`,
+        code: driver.code,
+    }));
+
 
     const [unpickedDrivers, setUnpickedDrivers] = useState(initialUnpickedDrivers);
     const [pickedDrivers, setPickedDrivers] = useState([]);
@@ -50,11 +40,7 @@ export default function MakePrediction({...props}) {
         setPickedDrivers(updatedPickedDrivers);
         setUnpickedDrivers((prevUnpickedDrivers) => [...prevUnpickedDrivers, driver]);
       };
-
-
-
     
-
     return (
         <div className="makePredictionWindow">
             <div className="makePredictionInfo">
@@ -66,7 +52,7 @@ export default function MakePrediction({...props}) {
                 <ul className="unpickedDrivers">
                     {unpickedDrivers.map((driver, index) => (
                     <li key={index} className="unpickedDriver" onClick={() => handlePickDriver(driver)}>
-                        {driver.name}
+                        {driver.number}
                     </li>
                     ))}
                 </ul>
@@ -84,14 +70,12 @@ export default function MakePrediction({...props}) {
                     {pickedDrivers.map((driver, index) => (
                     <tr key={index} onClick={() => handleUnpickDriver(driver)}>
                         <td>{driver.number}</td>
-                        <td>{driver.name}</td>
+                        <td>{driver.fullName}</td>
                     </tr>
                     ))}
                     </tbody>
                 </table>
             </div>
-
-            {/* <PredictionForm /> */}
         </div>
     )
 }

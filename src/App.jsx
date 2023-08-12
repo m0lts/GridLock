@@ -19,10 +19,10 @@ function App() {
           <WindowOne />
           <WindowTwo />
         </section>
-        <section className="sectionTwo">
+        {/* <section className="sectionTwo">
           <WindowThree />
           <WindowFour />
-        </section>
+        </section> */}
       </main>
       <Footer />
     </>

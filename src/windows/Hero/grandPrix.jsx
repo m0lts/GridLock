@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { RaceInformation } from "../../hooks/raceInfoErgast";
+import { StaticRaceInformation, DynamicRaceInformation } from "../../hooks/raceInfoErgast";
 import "../../assets/global.css";
 import BelgianFlag from "../../assets/interface/media/flags/belgium_flag.svg";
 import BelgianCircuit from "../../assets/interface/media/circuits/belgium_track.png";
@@ -10,8 +10,9 @@ export default function GrandPrix() {
             circuitName,
             circuitTrackImg,
             raceName,
-            grandPrixName,
-            raceStartTime } = RaceInformation();
+            grandPrixName } = StaticRaceInformation();
+
+    const { raceStartTime } = DynamicRaceInformation();
 
     return (
         <section className="nextRaceBanner">

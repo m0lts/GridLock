@@ -5,7 +5,7 @@ import MakePrediction from "../WindowOne/makePrediction";
 export default function WindowTwo() {
     return (
         <div className="windowTwo">
-            <MakePrediction />
+            
         </div>
     )
 }
