@@ -418,12 +418,12 @@ INCLUDES COMMON STYLING FOR WINDOWS 1 AND 2
   font-style: italic;
   padding:7px;
   color: var(--white);
+  border-radius: 2px;
 }
 .unpickedDriverFullName {
   background-color: var(--dark-grey);
   color: var(--white);
   padding:5px;
-  border-radius: 0 5px 5px 0;
   box-shadow: 5px 5px 10px var(--light-grey);
 }
 .unpickedDriverFirstName {
@@ -439,6 +439,9 @@ INCLUDES COMMON STYLING FOR WINDOWS 1 AND 2
   width:90%;
   margin:15px auto;
 }
+.pickedDriversTableHide {
+  display: none;
+}
 .pickedDriversTableHeader {
   font-size: 0.8rem;
   color:var(--white);
@@ -449,10 +452,6 @@ INCLUDES COMMON STYLING FOR WINDOWS 1 AND 2
 .pickedDriversTableHeaderPosition {
   padding:5px 0;
 }
-.pickedDriversTableHeaderName {
-  padding-left: 10px;
-  text-align: left;
-}
 .position {
   text-align: center;
   font-size: 0.8rem;
@@ -462,6 +461,12 @@ INCLUDES COMMON STYLING FOR WINDOWS 1 AND 2
   font-style: italic;
   text-align: center;
   padding: 5px 0;
+  font-weight: bold;
+}
+.pickedDriverTeam {
+  font-size: 0.8rem;
+  color: var(--dark-grey);
+  text-align: center;
 }
 .pickedDriverFirstName {
   padding-left: 10px;
@@ -482,6 +487,29 @@ INCLUDES COMMON STYLING FOR WINDOWS 1 AND 2
 }
 .submissionFormSubmitBtn {
   display: block;
+  margin:0 auto;
+  margin-bottom: 25px;
+  border:1px solid var(--dark-grey);
+  border-radius: 5px;
+  padding:10px;
+  font-family: var(--titillium);
+  background-color: var(--dark-grey);
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.submissionFormSubmitBtn:hover {
+  border:1px solid var(--white);
+  color: var(--light-grey);
+}
+.submissionFormSubmitBtn:active {
+  border:1px solid var(--white);
+  color: var(--black);
+  background-color: var(--light-grey);
+}
+.submissionFormSubmitBtnHide {
+  display: none;
 }
 
 

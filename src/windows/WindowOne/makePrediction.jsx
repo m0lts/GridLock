@@ -79,11 +79,12 @@ export default function MakePrediction() {
                     </ul>
                 </div>
                 <div className="pickedDriversCont">
-                    <table className="pickedDriversTable">
+                    <table className={pickedDrivers.length === 0 ? "pickedDriversTableHide" : "pickedDriversTable"}>
                         <thead className="pickedDriversTableHeader">
                             <tr>
                                 <td className="pickedDriversTableHeaderPosition">Position</td>
                                 <td className="pickedDriversTableHeaderNumber">Number</td>
+                                <td className="pickedDriversTableHeaderTeam">Team</td>
                                 <td className="pickedDriversTableHeaderName">Name</td>
                                 <td className="pickedDriversTableHeaderRemove">Delete</td>
                             </tr>
@@ -93,6 +94,7 @@ export default function MakePrediction() {
                         <tr key={index} onClick={() => handleUnpickDriver(driver)}>
                             <td className="position">P{positionCounter + index}</td>
                             <td className="pickedDriverNumber">{driver.number}</td>
+                            <td className="pickedDriverTeam">{driver.team}</td>
                             <td><span className="pickedDriverFirstName">{driver.firstName}</span> <span className="pickedDriverLastName">{driver.lastName}</span></td>
                             <td className="removeDriver">X</td>
                         </tr>
@@ -104,7 +106,7 @@ export default function MakePrediction() {
                     {pickedDrivers.map((driver, index) => (
                         <input className="submissionForm" type="text" key={index} name={`P${index + 1}`} defaultValue={driver.lastName} />
                     ))}
-                    <input className="submissionFormSubmitBtn" type="submit" value="Submit"/>
+                    <input className={pickedDrivers.length === 0 ? "submissionFormSubmitBtnHide" : "submissionFormSubmitBtn"} type="submit" value="Submit"/>
                 </form>
                 {submissionResult && <p>{submissionResult}</p>}
             </div>

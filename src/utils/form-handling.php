@@ -7,47 +7,30 @@ $password = "Wilson2000"; // Replace with your actual password
 // Create a database connection
 $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 
-// Initialize response message
-$responseMessage = "";
-
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $successCount = 0;
     $errorCount = 0;
 
+    $columnValues = array_fill(0, 10, null); // Initialize an array to hold column values
+
     foreach ($_POST as $key => $value) {
         if (strpos($key, "P") === 0) {
             $index = substr($key, 1);
-            $lastName = $_POST[$key];
-
-            // Insert data into the database
-            $stmt = $conn->prepare("INSERT INTO testtable (position, name) VALUES (?, ?)");
-
-            if ($stmt->execute([$index, $lastName])) {
-                $successCount++;
-            } else {
-                $errorCount++;
-            }
+            $columnValues[$index - 1] = $value; // Update the corresponding column value
         }
     }
 
-    if ($successCount > 0) {
-        $responseMessage .= "Inserted $successCount records successfully.";
-    }
+    // Insert data into the database
+    $stmt = $conn->prepare("INSERT INTO test_predictions (p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-    if ($errorCount > 0) {
-        $responseMessage .= " Encountered $errorCount errors.";
+    if ($stmt->execute($columnValues)) {
+        $successCount++;
+    } else {
+        $errorCount++;
     }
 }
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Form Handling Result</title>
-</head>
-<body>
-    <?php echo $responseMessage; ?>
-</body>
-</html>
+
 
 
