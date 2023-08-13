@@ -366,10 +366,9 @@ INCLUDES COMMON STYLING FOR WINDOWS 1 AND 2
 
 /* Predictions unpicked */
 .unpickedDriver {
-  border:1px solid red;
+  list-style: none;
 }
 .pickedDriversTable {
-  border:1px solid red;
   width:90%;
   margin:15px auto;
 }

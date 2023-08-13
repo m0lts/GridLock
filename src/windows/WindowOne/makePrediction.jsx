@@ -5,6 +5,7 @@ import { PredictionForm } from "../../components/forms";
 import "../../assets/global.css";
 import BelgianFlag from "../../assets/interface/media/flags/belgium_flag.svg";
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 
 export default function MakePrediction() {
@@ -34,6 +35,25 @@ export default function MakePrediction() {
         setPickedDrivers(updatedPickedDrivers);
         setUnpickedDrivers((prevUnpickedDrivers) => [...prevUnpickedDrivers, driver]);
       };
+
+    //   FORM HANDLING
+
+    const [submissionResult, setSubmissionResult] = useState("");
+
+    const handleSubmit = async (event) => {
+        event.preventDefault(); // Prevent default form submission
+
+        try {
+            const formData = new FormData(event.target);
+            await axios.post("/src/utils/form-handling.php", formData);
+
+            // Set the submission result message based on success or error
+            setSubmissionResult("Form submitted successfully!");
+        } catch (error) {
+            console.error("An error occurred:", error);
+            setSubmissionResult("An error occurred while submitting the form.");
+        }
+    };
     
     return (
         <div className="makePredictionWindow">
@@ -72,6 +92,13 @@ export default function MakePrediction() {
                     </tbody>
                 </table>
             </div>
+            <form method="post" onSubmit={handleSubmit}>
+                {pickedDrivers.map((driver, index) => (
+                    <input type="text" key={index} name={`P${index + 1}`} defaultValue={driver.lastName} />
+                ))}
+                <input type="submit" value="Submit"/>
+            </form>
+            {submissionResult && <p>{submissionResult}</p>}
         </div>
     )
 }
