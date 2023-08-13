@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
-$dbname = "test";
-$username = "root";
+$dbname = "u128425984_test";
+$username = "u128425984_moltontom_test";
 $password = "Wilson2000"; // Replace with your actual password
 
 // Create a database connection
