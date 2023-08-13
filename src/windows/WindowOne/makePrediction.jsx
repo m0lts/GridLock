@@ -6,6 +6,8 @@ import "../../assets/global.css";
 import BelgianFlag from "../../assets/interface/media/flags/belgium_flag.svg";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLock } from "@fortawesome/free-solid-svg-icons";
 
 
 export default function MakePrediction() {
@@ -56,49 +58,56 @@ export default function MakePrediction() {
     };
     
     return (
-        <div className="makePredictionWindow">
-            <div className="makePredictionInfo">
-                <h6 className="qualifyingCountdown">Predictions close in: {qualifyingStartTime}</h6>
-                <p className="infoText">Make your prediction for the {grandPrixName} below by selecting your Top 10 drivers.</p>
+        <div className='makePredictionWindow'>
+            <div className={qualifyingStartTime === "00:00:00:00" ? "makePredictionInfoClosed" : "makePredictionInfo"}>
+                <FontAwesomeIcon className={qualifyingStartTime === "00:00:00:00" ? "showLock" : "hideLock"} icon={faLock} />
+                <h6 className="qualifyingCountdown">
+                    {qualifyingStartTime === "00:00:00:00" ? "Predictions are Closed" : `Predictions close in: ${qualifyingStartTime}`}
+                </h6>
+                <p className="infoText">
+                    {qualifyingStartTime === "00:00:00:00" ? "Your prediction from last week has been submitted." : `Make your prediction for the ${grandPrixName} below by selecting your Top 10 drivers.`}                </p>
             </div>
-            <div className="unpickedDriversCont">
-                <h3>Unpicked Drivers</h3>
-                <ul className="unpickedDrivers">
-                    {unpickedDrivers.map((driver, index) => (
-                    <li key={index} className="unpickedDriver" onClick={() => handlePickDriver(driver)}>
-                        {driver.firstName} {driver.lastName}
-                    </li>
-                    ))}
-                </ul>
-            </div>
-            <div className="pickedDriversCont">
-                <h3>Picked Drivers</h3>
-                <table className="pickedDriversTable">
-                    <thead className="pickedDriversTableHeader">
-                        <tr>
-                            <td>Position</td>
-                            <td>Number</td>
-                            <td>Name</td>
+            <div className={qualifyingStartTime === "00:00:00:00" ? 'predictionsClosed' : ''}>
+                <div className="unpickedDriversCont">
+                    <h5>Select Drivers:</h5>
+                    <ul className="unpickedDrivers">
+                        {unpickedDrivers.map((driver, index) => (
+                        <li key={index} className="unpickedDriver" onClick={() => handlePickDriver(driver)}>
+                            <span className="unpickedDriverNumber">{driver.number}</span><span className="unpickedDriverFullName"><span className="unpickedDriverFirstName">{driver.firstName}</span> <span className="unpickedDriverLastName">{driver.lastName}</span></span>
+                        </li>
+                        ))}
+                    </ul>
+                </div>
+                <div className="pickedDriversCont">
+                    <table className="pickedDriversTable">
+                        <thead className="pickedDriversTableHeader">
+                            <tr>
+                                <td className="pickedDriversTableHeaderPosition">Position</td>
+                                <td className="pickedDriversTableHeaderNumber">Number</td>
+                                <td className="pickedDriversTableHeaderName">Name</td>
+                                <td className="pickedDriversTableHeaderRemove">Delete</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {pickedDrivers.map((driver, index) => (
+                        <tr key={index} onClick={() => handleUnpickDriver(driver)}>
+                            <td className="position">P{positionCounter + index}</td>
+                            <td className="pickedDriverNumber">{driver.number}</td>
+                            <td><span className="pickedDriverFirstName">{driver.firstName}</span> <span className="pickedDriverLastName">{driver.lastName}</span></td>
+                            <td className="removeDriver">X</td>
                         </tr>
-                    </thead>
-                    <tbody>
+                        ))}
+                        </tbody>
+                    </table>
+                </div>
+                <form method="post" onSubmit={handleSubmit}>
                     {pickedDrivers.map((driver, index) => (
-                    <tr key={index} onClick={() => handleUnpickDriver(driver)}>
-                        <td className="position">{positionCounter + index}</td>
-                        <td className="driverNumber">{driver.number}</td>
-                        <td><span className="driverFirstName">{driver.firstName}</span> <span className="driverLastName">{driver.lastName}</span></td>
-                    </tr>
+                        <input className="submissionForm" type="text" key={index} name={`P${index + 1}`} defaultValue={driver.lastName} />
                     ))}
-                    </tbody>
-                </table>
+                    <input className="submissionFormSubmitBtn" type="submit" value="Submit"/>
+                </form>
+                {submissionResult && <p>{submissionResult}</p>}
             </div>
-            <form method="post" onSubmit={handleSubmit}>
-                {pickedDrivers.map((driver, index) => (
-                    <input type="text" key={index} name={`P${index + 1}`} defaultValue={driver.lastName} />
-                ))}
-                <input type="submit" value="Submit"/>
-            </form>
-            {submissionResult && <p>{submissionResult}</p>}
         </div>
     )
 }

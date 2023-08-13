@@ -147,7 +147,7 @@ export function DynamicRaceInformation() {
 
                 if (distance < 0) {
                     clearInterval(qualiCountdown);
-                    setQualifyingStartTime('00:00:00');
+                    setQualifyingStartTime('00:00:00:00');
                 } else {
                     setQualifyingStartTime(addZero(days) + ":" + addZero(hours) + ":" + addZero(minutes) + ":" + addZero(seconds));
                 }

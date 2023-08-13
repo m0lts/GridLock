@@ -323,12 +323,44 @@ INCLUDES COMMON STYLING FOR WINDOWS 1 AND 2
 /* MAKE PREDICTION COMP */
 .makePredictionWindow {
   width:100%;
+  height:100%;
+}
+.predictionsClosedWindow {
+  display: none;
+}
+.predictionsClosedWindowShow {
+  display: block;
+  height:500px;
+  border-radius: 0 0 25px 25px;
+  background-color: #00BF36;
+}
+.predictionsClosed {
+  display: none;
 }
 .makePredictionInfo {
   text-align: center;
   padding:15px;
   background-color: var(--red);
   color: var(--white);
+}
+.makePredictionInfoClosed {
+  color: var(--white);
+  border: 1px solid var(--light-grey);
+  background-color: var(--dark-grey);
+  height:100%;
+  border-radius: 0 0 25px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:25px;
+}
+.hideLock {
+  display: none;
+}
+.showLock {
+  display: block;
+  font-size: 3rem;
 }
 .qualifyingCountdown {
   font-size: 1.25rem;
@@ -365,8 +397,43 @@ INCLUDES COMMON STYLING FOR WINDOWS 1 AND 2
 
 
 /* Predictions unpicked */
+.unpickedDriversCont {
+  text-align: center;
+  padding:15px;
+}
+.unpickedDrivers {
+  padding:15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 .unpickedDriver {
   list-style: none;
+  margin:15px;
+  cursor: pointer;
+}
+.unpickedDriverNumber {
+  background-color: var(--red);
+  font-weight: bold;
+  font-style: italic;
+  padding:7px;
+  color: var(--white);
+}
+.unpickedDriverFullName {
+  background-color: var(--dark-grey);
+  color: var(--white);
+  padding:5px;
+  border-radius: 0 5px 5px 0;
+  box-shadow: 5px 5px 10px var(--light-grey);
+}
+.unpickedDriverFirstName {
+  color:var(--light-grey);
+  font-size: 0.75rem;
+}
+.unpickedDriverLastName {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 .pickedDriversTable {
   width:90%;
@@ -374,25 +441,47 @@ INCLUDES COMMON STYLING FOR WINDOWS 1 AND 2
 }
 .pickedDriversTableHeader {
   font-size: 0.8rem;
-  color:var(--dark-grey);
+  color:var(--white);
   font-weight: 600;
   text-align: center;
+  background-color: var(--dark-grey);
+}
+.pickedDriversTableHeaderPosition {
+  padding:5px 0;
+}
+.pickedDriversTableHeaderName {
+  padding-left: 10px;
+  text-align: left;
 }
 .position {
   text-align: center;
+  font-size: 0.8rem;
 }
-.driverNumber {
+.pickedDriverNumber {
   color: var(--dark-grey);
   font-style: italic;
   text-align: center;
+  padding: 5px 0;
 }
-.driverFirstName {
+.pickedDriverFirstName {
+  padding-left: 10px;
   color:var(--dark-grey);
   font-size: 0.9rem;
 }
-.driverLastName {
+.pickedDriverLastName {
   font-weight: bold;
   text-transform: uppercase;
+}
+.removeDriver {
+  color: var(--red);
+  cursor: pointer;
+  text-align: center;
+}
+.submissionForm {
+  display: none;
+}
+.submissionFormSubmitBtn {
+  display: block;
 }
 
 
