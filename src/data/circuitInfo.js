@@ -1,5 +1,3 @@
-import { NetherlandsFlag } from "/public/interface/media/flags/netherlands_flag.svg";
-
 export const circuitFlags = {
     "Bahrain": "/src/assets/interface/media/flags/bahrain_flag.svg",
     "Saudi Arabia": "/src/assets/interface/media/flags/saudi_flag.png",
@@ -14,7 +12,7 @@ export const circuitFlags = {
     "UK": "/src/assets/interface/media/flags/uk_flag.png",
     "Hungary": "/src/assets/interface/media/flags/hungary_flag.svg",
     "Belgium": "/src/assets/interface/media/flags/belgium_flag.svg",
-    "Netherlands": {NetherlandsFlag},
+    "Netherlands": "/assets/interface/media/flags/netherlands_flag.svg",
     "Singapore": "/src/assets/interface/media/flags/singapore_flag.svg",
     "Japan": "/src/assets/interface/media/flags/japan_flag.png",
     "Qatar": "/src/assets/interface/media/flags/qatar_flag.svg",
