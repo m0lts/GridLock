@@ -37,24 +37,24 @@ export default function MakePrediction() {
         setUnpickedDrivers((prevUnpickedDrivers) => [...prevUnpickedDrivers, driver]);
       };
 
-    //   FORM HANDLING
+    // FORM HANDLING
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        
+        const formData = new FormData(event.target);
+        const queryParams = new URLSearchParams(formData);
+    
+        const url = `/api/add-prediction?${queryParams.toString()}`;
 
-    // const [submissionResult, setSubmissionResult] = useState("");
+        const response = await fetch(url);
+    
+        if (response.ok) {
+            console.log("SUCCESS");
+        } else {
+          console.log("ERROR");
+        }
+      };
 
-    // const handleSubmit = async (event) => {
-    //     event.preventDefault(); // Prevent default form submission
-
-    //     try {
-    //         const formData = new FormData(event.target);
-    //         await axios.post("/src/utils/form-handling.php", formData);
-
-    //         // Set the submission result message based on success or error
-    //         setSubmissionResult("Form submitted successfully!");
-    //     } catch (error) {
-    //         console.error("An error occurred:", error);
-    //         setSubmissionResult("An error occurred while submitting the form.");
-    //     }
-    // };
     
     return (
         <div className='makePredictionWindow'>
@@ -101,14 +101,13 @@ export default function MakePrediction() {
                         </tbody>
                     </table>
                 </div>
-                
-                {/* <form method="post" onSubmit={handleSubmit}>
+
+                <form onSubmit={handleSubmit}>
                     {pickedDrivers.map((driver, index) => (
                         <input className="submissionForm" type="text" key={index} name={`P${index + 1}`} defaultValue={driver.lastName} />
                     ))}
                     <input className={pickedDrivers.length === 0 ? "submissionFormSubmitBtnHide" : "submissionFormSubmitBtn"} type="submit" value="Submit"/>
                 </form>
-                {submissionResult && <p>{submissionResult}</p>} */}
             </div>
         </div>
     )
