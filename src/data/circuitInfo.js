@@ -63,7 +63,7 @@ export const circuitFlags = {
     "Hungarian Grand Prix": "/src/assets/interface/media/circuits/hungary_track.png",
     "Belgian Grand Prix": "/src/assets/interface/media/circuits/belgium_track.png",
     "Italian Grand Prix": "/src/assets/interface/media/circuits/monza_track.png",
-    "Dutch Grand Prix": "/src/assets/interface/media/circuits/dutch_track.png",
+    "Dutch Grand Prix": "/interface/media/circuits/dutch_track.png",
     "Singapore Grand Prix": "/src/assets/interface/media/circuits/singapore_track.png",
     "Japanese Grand Prix": "/src/assets/interface/media/circuits/japan_track.png",
     "Qatar Grand Prix": "/src/assets/interface/media/circuits/qatar_track.png",
