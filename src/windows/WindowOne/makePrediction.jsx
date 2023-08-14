@@ -9,7 +9,6 @@ import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
 
-
 export default function MakePrediction() {
 
     const [positionCounter, setPositionCounter] = useState(1);

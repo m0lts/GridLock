@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { StaticRaceInformation, DynamicRaceInformation } from "../../hooks/raceInfoErgast";
 import "../../assets/global.css";
-import BelgianFlag from "../../assets/interface/media/flags/belgium_flag.svg";
+import BelgianFlag from "/public/interface/media/flags/belgium_flag.svg";
 import BelgianCircuit from "../../assets/interface/media/circuits/belgium_track.png";
 
 export default function GrandPrix() {
@@ -17,7 +17,7 @@ export default function GrandPrix() {
     return (
         <section className="nextRaceBanner">
             <div className="heroTop">
-                <img src={flag} alt={circuitName + " Flag"} className="flagFill"/>
+                <img src={BelgianFlag} alt={circuitName + " Flag"} className="flagFill"/>
                 <h3>Round {round}</h3>
             </div>
             <div className="bannerHeroMain">
