@@ -17,7 +17,7 @@ export default function GrandPrix() {
     return (
         <section className="nextRaceBanner">
             <div className="heroTop">
-                <img src={BelgianFlag} alt={circuitName + " Flag"} className="flagFill"/>
+                <img src="/public/interface/media/flags/belgium_flag.svg" alt={circuitName + " Flag"} className="flagFill"/>
                 <h3>Round {round}</h3>
             </div>
             <div className="bannerHeroMain">
